@@ -1,4 +1,4 @@
-# mutual_book_exchange_portal
+# Mutual Book Exchange Portal
 This project involves the code for a Spring Boot project, hosted locally, with a local DB. Here are some more information about the features of this Web-App: 
 
 • A web application which allows users to mutually exchange books, with a centralized database and an administrator for maintenance. 
