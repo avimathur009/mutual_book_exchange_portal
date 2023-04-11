@@ -23,6 +23,7 @@ public class AdminController {
     
     @GetMapping("/users")
     public String ListUsers(Model model) {
+        //List of all users
         List<User> listUsers = userRepository.findAll();
         model.addAttribute("listUsers", listUsers);
         return "/admin/users";

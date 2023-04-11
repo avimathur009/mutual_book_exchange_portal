@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book Form</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-light vsc-initialized" data-new-gr-c-s-check-loaded="14.1057.0" data-gr-ext-installed="">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/home}">Book Exchange Portal</a>
+        </div>
+    </nav>
+    <div class="container text-center">
+        <br>
+        <br>
+        <h2>Add a Book</h2>
+        <p class="lead">Fill in the form to contribute to our collection. All fields are required.</p>
+        <br>
+        <form th:action="@{/books/book_register}" th:object="${book}" method="post" style="max-width: 600px; margin: 0 auto;">
+            <div class="row g-3">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Title </label>
+                    <div class="col-8"><input type="text" th:field="*{title}" class="form-control" required/></div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Author </label>
+                    <div class="col-8"><input type="text" th:field="*{author}" class="form-control" required/></div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Publisher </label>
+                    <div class="col-8"><input type="text" th:field="*{publisher}" class="form-control" required/></div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Year Of Publishing </label>
+                    <div class="col-8"><input min="0" max="2022" type="number" th:field="*{yearOfPublishing}" class="form-control" required/></div>
+                </div>
+                <br>
+                <br>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Edition </label>
+                    <div class="col-8"><input min="1" type="number" th:field="*{edition}" class="form-control" required/></div>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-primary">Add Book</button>
+                    <button type="submit" class="btn btn-default" form="form2">Cancel</button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <form id="form2" th:action="@{/home}"></form>
+    </div>
+</body>
+</html>
